@@ -642,7 +642,7 @@
               datasets: [{
                 label: 'Horas Esperadas',
                 data: [
-                  arrayHorasRechazadasMes[0], arrayHorasRechazadasMes[1], arrayHorasPendientesMes[2]
+                  arrayHorasAprobadasMes[0], arrayHorasRechazadasMes[1], arrayHorasPendientesMes[2]
                 ],
                 backgroundColor: ['rgba(66,109,169, 1)', 'rgba(100,32,119, 1)'],
                 borderColor: ['rgba(66,109,169, 1)', 'rgba(100,32,119, 1)']
