@@ -409,9 +409,14 @@
             arregloNombresValues.push(miArreglo[prop][prop2])
           }
         }
+        console.log('arregloNombresValues')
+        console.log(arregloNombresValues)
 
         var unique = [new Set(arregloNombresValues)];
 
+        console.log('unique')
+        console.log(unique)
+        
         for (var index = 0; index < arregloValues.length; index++) {
           arreglosValues.push(arregloValues[index]);
         }
@@ -445,6 +450,8 @@
 
           }
         }
+        console.log('dataArray 1')
+        console.log(dataArray)
 
         var miObjeto = {}
         var objetoVacio = {}
@@ -519,6 +526,8 @@
          
           setTimeout(function(){
             titulo.style.visibility = "visible";
+            console.log('dataArray')
+            console.log(dataArray)
             renderChart(dataArray);
           }, 2000);
         });
