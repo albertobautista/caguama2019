@@ -188,7 +188,7 @@
                   targets:  1,
                   render: function (data, type, row) {
                     console.log('data')
-                    console.log(data)            
+                    console.log(data.length)            
                     return data.substr(0, 20) + '…';
                   }
                 }
