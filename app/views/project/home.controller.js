@@ -495,7 +495,7 @@
               backgroundColor: [arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador]],
 
             }
-            //data.datasets.push(miObjeto[contador])
+            data.datasets.push(miObjeto[contador])
             contador++
           })
           console.log('data')
