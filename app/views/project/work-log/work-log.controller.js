@@ -187,6 +187,12 @@
                   render: function (data, type, row) {
                     return data.substr(0, 20) + '…';
                   }
+                },
+                {
+                  targets: 1,
+                  render: function(data, type, row){
+                    return data.substr(0,20) + '…';
+                  }
                 }
               ],
               targets: 4,
