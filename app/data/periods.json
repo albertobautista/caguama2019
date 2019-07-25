@@ -1,0 +1,18 @@
+[{
+    "value": "7",
+    "name": "7 días"
+},
+{
+    "value": "15",
+    "name": "15 días"
+},
+{
+    "value": "30",
+    "name": "Mes"
+},
+{
+    "value": "365",
+    "name": "Año"
+}
+
+]

@@ -1,0 +1,263 @@
+@import url("colors.css");
+
+@font-face {
+    font-family: FSLola-Light;
+    src: url('../fonts/FSLola-Light.otf');
+}
+
+body {    
+    font-family: 'FSLola-Light'!important;
+}
+
+.nameDetails{
+    font-family: 'FSLola-Light'!important;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.numbers{
+    font-family: 'FSLola-Light'!important;
+    font-size: 28px;
+    font-weight: bold;
+    color:var(--mainColor)!important
+
+}
+.datesDrop{
+    font-size: 16px!important;
+}
+.tittle {
+    font-size: 21px;
+}
+
+.container {
+    background-color: #fff!important;
+}
+
+.align {
+    text-align: left;
+}
+
+.navbar-default {
+    background-color: #ffffff!important;
+    border-bottom: solid 4px #452562 !important;
+}
+.time2goName{
+    font-weight: bold;
+    color: #452562;
+}
+
+.myColor{
+    background-color: var(--mainColor)!important;
+    border-radius: 10px 10px 0px 0px;
+}
+/*.myButton{
+    background-color: var(--mainColor)!important;
+}*/
+
+.myButtonAdd:hover{
+    /*background-color: var(--mainColor)!important;*/
+}
+.md-toolbar-tools{
+    max-height:45px!important;
+}
+.md-toolbar{
+    min-height: 45px;
+}
+
+.navbar-brand {
+    color: #FFF!important;
+}
+.roundedBorders{
+    border-radius: 10px 10px 10px 10px;
+}
+
+.md-datepicker-input-container {
+    width: 170px!important;
+    margin-left: 0px!important;
+}
+
+.md-icon-button {
+    margin-left: 0px!important;
+}
+
+md-content {
+    background-color: #fff!important;
+}
+
+.marginLeft {
+    margin-left: 60px;
+}
+
+.btn-margin {
+    margin-top: 7px
+}
+.name{
+    margin-top: 11px;
+}
+.mleft{
+    margin-left: -34px;
+}
+
+.loading {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+a {
+    cursor: pointer;
+}
+hr {
+    margin-top: 5px!important;
+    margin-bottom: 5px!important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.block {
+    margin-top: -25px;
+}
+.width100{
+    width: 100%;
+}
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+.myWidth{
+    width: 100%;
+}
+.buttonWhite{
+    color: #452562;
+}
+.profilePhoto{
+    width: 45px;
+    margin-left: 10px;
+}
+.profilePhotoBig{
+    width: 150px;
+    
+}
+.profilePhoto
+{
+    width: 45px;
+    padding-right: 10px;
+}
+.dropdown-menu{
+    min-width: 137px!important;
+}
+.marginBottom{
+    margin-bottom: -52px!important;
+}
+md-option{
+    height: 35px!important;
+}
+md-toast.md-top {
+    /* left: 50%;
+    margin-left: 26%;*/
+    /* margin-top: 50px;  */
+    margin-left: auto;
+    margin-right: auto;
+    left: 0; right: 0;
+    width: 400px;
+    
+}
+.md-toast-success{
+    background-color: #446ca9!important;
+    height: 50px!important;
+    box-shadow: 0 0 0 0 rgba(85, 40, 40, 0)!important;
+    -webkit-transform: translate3d(0, 0, 0) rotateZ(0deg)!important;
+    transform: translate3d(0, 0, 0) rotateZ(0deg)!important;
+    -webkit-transition: all .2s cubic-bezier(0.25, 0.8, 0.25, 1)!important;
+    transition: all .3s cubic-bezier(0.25, 0.8, 0.25, 1)!important;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'FSLola-Light'!important;
+    position: absolute;
+    top: 55%;
+    /* transform: translateY(-50%); */
+}
+.md-toast-error{
+    background-color: #323232!important;
+    height: 50px!important;
+    box-shadow: 0 0 0 0 rgba(85, 40, 40, 0)!important;
+    -webkit-transform: translate3d(0, 0, 0) rotateZ(0deg)!important;
+    transform: translate3d(0, 0, 0) rotateZ(0deg)!important;
+    -webkit-transition: all .2s cubic-bezier(0.25, 0.8, 0.25, 1)!important;
+    transition: all .3s cubic-bezier(0.25, 0.8, 0.25, 1)!important;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'FSLola-Light'!important;
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */
+}
+md-toast.md-default-theme .md-toast-content, md-toast .md-toast-content{
+    background-color:transparent;
+    box-shadow: 0 0 0 0 rgba(85, 40, 40, 0)!important;
+    -webkit-transform: translate3d(0, 0, 0) rotateZ(0deg)!important;
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+    -webkit-transition: all 2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all .7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-box-pack: start!important;
+    -webkit-justify-content: flex-start!important;
+    
+} 
+
+.widthDrop1{
+    width: 217px!important;
+}
+.widthDrop2{
+    width: 178px!important;
+}
+.widthDrop3{
+    width: 205px!important;
+}
+.widthHours{
+    min-width: 26px!important;
+}
+.marginTop{
+    margin-top: 10px;
+}
+.md-select-value{
+    min-width: 76px!important;
+}
+.toast-gray {
+    background-color: #808080!important;
+}
+
+.toast-blue {
+    background-color: #446ca9!important;
+}
+
+td.highlight {
+    font-weight: bold;
+    color: blue;
+}
+
+td.graybutton {
+    color: rgb(216, 212, 212) !important;
+    pointer-events: none;
+}
+td.approved {
+    color: green !important;
+}
+td.rejected {
+    color: red !important;
+}
+button:hover {
+    text-decoration: none;
+    color: rgb(0, 255, 34);
+    }

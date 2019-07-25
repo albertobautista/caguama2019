@@ -1,0 +1,183 @@
+<h4 ng-if="vm.auth.isAuthenticated()" id="details" style="overflow-x: hidden; background-color:#FFF; opacity:0;">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <center>
+                <div md-whiteframe="2" class="roundedBorders myWidth">
+                    <div layout="column" layout-padding layout-margin class="align">
+                        <!-- Category -->
+                        <md-input-container>
+                            <div class="row ">
+                                <div class="col-md-6">
+                                    <center>
+                                        <img name='photo' id="photo" src="{{photo}}" class="img-circle profilePhotoBig">
+                                    </center>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="nameDetails">{{agentName}}</span><br><br><br>
+                                    <span>Grupo: {{myGroup}}</span><br><br><br>
+                                    <span>Horas al día: {{hours}} hrs.</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="col-md-6">
+            <center>
+                <div md-whiteframe="2" class="roundedBorders myWidth">
+                    <div layout="column" layout-padding layout-margin class="align">
+                        <!-- Category -->
+                        <md-input-container style="margin-top: -23px; margin-bottom: -4px">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-12 col-xs-12">
+                                    <center><br><b>Información General</b></center>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12 text-right">
+
+                                    <md-input-container>
+                                        <md-select name='period' id="period" ng-model="vm.selectedperiod"
+                                            aria-label="Periodo" placeholder="Periodo" class="datesDrop">
+                                            <md-option ng-value="period" ng-repeat="period in periods"
+                                                ng-selected="$first">
+                                                {{ period.name }}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                            <div class="row ">
+
+                                <div class="row">
+                                    <div class="col-md-12" style="margin-top: -18px; "><b>Actual</b></div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <center>
+                                        <span>Proyectos</span><br>
+                                        <span class="numbers">{{myNumberProject}}</span>
+                                    </center>
+                                </div>
+                                <div class="col-md-4">
+                                    <center>
+                                        <span>Horas</span><br>
+                                        <span class="numbers">{{myHoursProject}}</span>
+                                    </center>
+                                </div>
+                                <div class="col-md-4">
+                                    <center>
+                                        <span>Porcentaje</span><br>
+                                        <span class="numbers">{{myPercentageProject}}%</span>
+
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12"><br></div>
+                            </div>
+                            <div class="row ">
+                                <div class="row">
+                                    <div class="col-md-12"><b>{{namePeriod}}</b></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <center>
+                                        <span>Proyectos</span><br>
+                                        <span class="numbers">{{myProjectNumber}}</span>
+                                    </center>
+                                </div>
+                                <div class="col-md-4">
+                                    <center>
+                                        <span>Horas</span><br>
+                                        <span class="numbers">{{myProjectHours}}</span>
+                                    </center>
+                                </div>
+                                <div class="col-md-4">
+                                    <center>
+                                        <span>Porcentaje</span><br>
+                                        <span class="numbers">{{myProjectPercentage}}%</span>
+                                    </center>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                </div>
+            </center>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h2></h2>
+            </center>
+        </div>
+    </div>
+    <br><br>
+    <br>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <center>
+                <div>Horas registradas al año </div><br>
+            </center>
+            <div><canvas id="myChartEstadoRegistrosMes" width="400" height="400"></canvas></div>
+        </div>
+        <div class="col-md-5">
+            <center>
+                <div>Horas disponibles para registrar / Horas aprobadas</div><br>
+            </center>
+            <div><canvas id="myChart" width="400" height="400"></canvas></div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <br><br><br><br>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <center>
+                <div>Horas registradas aprobadas por proyecto este año</div><br>
+            </center>
+            <div> <canvas id="myChartDoughnutYear" width="400" height="400"></canvas></div>
+        </div>
+        <div class="col-md-5">
+            <center>
+                <div>Horas registradas aprobadas por proyecto este mes</div><br>
+            </center>
+            <div> <canvas id="myChartDoughnutMonth" width="400" height="400"></canvas></div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <br><br><br><br>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <center>
+                <div>Estado de los registros este año</div><br>
+            </center>
+            <div><canvas id="myChartPieYear" width="400" height="400"></canvas></div>
+        </div>
+        <div class="col-md-5">
+            <center>
+                <div>Estado de los registros este mes</div><br>
+            </center>
+            <div> <canvas id="myChartPieMonth" width="400" height="400"></canvas></div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- <div class="row">
+            <div class="col-md-12">
+                <center>
+                    <div>Horas registradas por proyecto por día</div><br>
+                </center>
+                <div><canvas id="myChartWeek" width="400" height="400"></canvas></div>
+            </div>               
+        </div> -->
+</h4>
+<h4 ng-if="!vm.auth.isAuthenticated()">
+    <div>
+        {{ unlogging() }}
+    </div>
+</h4>

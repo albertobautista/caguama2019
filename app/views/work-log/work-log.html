@@ -1,0 +1,50 @@
+
+<h4 ng-if="vm.auth.isAuthenticated()">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools ">
+            <h2 flex md-truncate> Time 2Go</h2>
+            <md-button id="buttonExit" class="md-raised" aria-label="Cerrar sesión" ng-click="vm.projects()"> Proyectos </md-button>
+            <md-button id="buttonExit" class="md-raised" aria-label="Cerrar sesión" ng-click="vm.logout()"> Salir </md-button>
+        </div>
+    </md-toolbar>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <span class="tittle">Registros de Trabajo</span>
+            </center>
+        </div>
+    </div>
+    <br>
+    <div class="row back">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 col-sm-12 col-xs-12">
+            <div>
+                <table id="worklogs" class="table table-striped table-bordered dt-responsive nowrap " cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Proyecto</th>
+                            <th>Etapa</th>
+                            <th>Categoria</th>
+                            <th>Fecha</th>
+                            <th>Horas</th>
+                            <th>Minutos</th>
+                            <th>Comentario</th>
+                            <th>Aprobado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <br>
+</h4>
+<h4 ng-if="!vm.auth.isAuthenticated()" <div layout="row" layout-align="center center" id="formPrin">
+    <script>
+        $window.location.href = '/';
+    </script>
+</h4>

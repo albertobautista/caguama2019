@@ -1,0 +1,50 @@
+<div class="width100">
+  <div ng-controller="Navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- <div class="navbar-header"> -->
+          <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+              <a class="navbar-brand" href=""><span class="time2goName"><img src="../../assets/img/ico.png" width="31px" class="hidden-sm hidden-xs">Time2Go</span></a>
+            </div>
+            <div class="col-md-8 col-sm-2 col-xs-2">
+            </div>
+            <div class="col-md-2 col-sm-8 col-xs-8 text-right">
+              <div class="dropdown marginTop ">
+                <button ng-if="vm.auth.isAuthenticated()" ui-sref="home" id="buttonTest" >
+                  <i class="material-icons buttonWhite">border_color</i>
+                </button>
+                <button ng-if="vm.auth.isAuthenticated()" ui-sref="worklogs">
+                  <i class="material-icons buttonWhite">assignment</i>
+                </button>
+                <button ng-if="vm.auth.isAuthenticated()" ui-sref="dashboards">
+                  <i class="material-icons buttonWhite">assessment</i>
+                </button>
+                <button ng-if="vm.auth.isAuthenticated()" class="dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
+                  <i class="material-icons buttonWhite">account_circle</i>
+                  <span class="caret buttonWhite"></span>
+                </button>
+                <ul ng-if="vm.auth.isAuthenticated()" class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                      <img name='photo' id="photo" src="{{photo}}" class="img-circle profilePhoto">
+                    </div>                    
+                    <div class="col-md-9 col-sm-9 col-xs-9 name">
+                      <center>
+                      <span class="btn-margin" name='agentName' id="agentName">{{agentName}}</span>
+                    </center>
+                    </div>
+                  </div>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" ng-click="vm.auth.logout()">Cerrar Sesión</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+    </nav>
+  </div>
+</div>

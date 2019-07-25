@@ -1,0 +1,381 @@
+[{
+    "totalhoursxmonth  ": [{
+        "1  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "198.00  "
+        }
+      },
+      {
+        "2  ": {
+          "horasRegistradas  ": "11.00  ",
+          "horasDisponibles  ": "180.00  "
+        }
+      },
+      {
+        "3  ": {
+          "horasRegistradas  ": "26.00  ",
+          "horasDisponibles  ": "207.00  "
+        }
+      },
+      {
+        "4  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "180.00  "
+        }
+      },
+      {
+        "5  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "207.00  "
+        }
+      },
+      {
+        "6  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "198.00  "
+        }
+      },
+      {
+        "7  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "189.00  "
+        }
+      },
+      {
+        "8  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "207.00  "
+        }
+      },
+      {
+        "9  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "189.00  "
+        }
+      },
+      {
+        "10  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "198.00  "
+        }
+      },
+      {
+        "11  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "198.00  "
+        }
+      },
+      {
+        "12  ": {
+          "horasRegistradas  ": "0  ",
+          "horasDisponibles  ": "189.00  "
+        }
+      }
+    ]
+  },
+  {
+    "totalhoursxmonthxproyectYEAR  ": [{
+        "Microsoft  ": {
+          "Nombre  ": "Microsoft  ",
+          "Horas  ": "2.00  "
+        }
+      },
+      {
+        "Apple  ": {
+          "Nombre  ": "Apple  ",
+          "Horas  ": "1.00  "
+        }
+      },
+      {
+        "Compusoluciones  ": {
+          "Nombre  ": "Compusoluciones  ",
+          "Horas  ": "25.00  "
+        }
+      },
+      {
+        "Snapchat  ": {
+          "Nombre  ": "Snapchat  ",
+          "Horas  ": "9.00  "
+        }
+      }
+    ]
+  },
+  {
+    "totalhoursxmonthxproyectMONTH  ": [{
+        "Microsoft  ": {
+          "Nombre  ": "Microsoft  ",
+          "Horas  ": "1.00  "
+        }
+      },
+      {
+        "Apple  ": {
+          "Nombre  ": "Apple  ",
+          "Horas  ": "1.00  "
+        }
+      },
+      {
+        "Compusoluciones  ": {
+          "Nombre  ": "Compusoluciones  ",
+          "Horas  ": "24.00  "
+        }
+      }
+    ]
+  },
+  {
+    "totalhoursxstatusxYEAR  ": [{
+        "Aprobado  ": "37.00  "
+      },
+      {
+        "Rechazado  ": "0  "
+      },
+      {
+        "Pendiente  ": "24.75  "
+      }
+    ]
+  },
+  {
+    "totalhoursxstatusMONTH  ": [{
+        "Aprobado  ": "26.00  "
+      },
+      {
+        "Rechazado  ": "0  "
+      },
+      {
+        "Pendiente  ": "1.00  "
+      }
+    ]
+  },
+  {
+    "totalhoursxmonthxSTATUS  ": [{
+        "1  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "11.75  "
+        }
+      },
+      {
+        "2  ": {
+          "Aprobado  ": "11.00  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "12.00  "
+        }
+      },
+      {
+        "3  ": {
+          "Aprobado  ": "26.00  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "1.00  "
+        }
+      },
+      {
+        "4  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "5  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "6  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "7  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "8  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "9  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "10  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "11  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      },
+      {
+        "12  ": {
+          "Aprobado  ": "0  ",
+          "Rechazado  ": "0  ",
+          "Pendiente  ": "0  "
+        }
+      }
+    ]
+  },
+  {
+    "agentSummary  ": [{
+        "Ano  ": [{
+            "Actual  ": {
+              "Proyectos  ": "4  ",
+              "Horas  ": "37.00  ",
+              "Porcentaje  ": "1.58  "
+            }
+          },
+          {
+            "Anterior  ": {
+              "Proyectos  ": "0  ",
+              "Horas  ": "0  ",
+              "Porcentaje  ": "0  "
+            }
+          }
+        ]
+      },
+      {
+        "Mes  ": [{
+            "Actual  ": {
+              "Proyectos  ": "3  ",
+              "Horas  ": "26.00  ",
+              "Porcentaje  ": "12.56  "
+            }
+          },
+          {
+            "Anterior  ": {
+              "Proyectos  ": "3  ",
+              "Horas  ": "11.00  ",
+              "Porcentaje  ": "6.11  "
+            }
+          }
+        ]
+      },
+      {
+        "Quincena  ": [{
+            "Actual  ": {
+              "Proyectos  ": "4  ",
+              "Horas  ": "37.00  ",
+              "Porcentaje  ": "41.11  "
+            }
+          },
+          {
+            "Anterior  ": {
+              "Proyectos  ": "0  ",
+              "Horas  ": "0  ",
+              "Porcentaje  ": "0  "
+            }
+          }
+        ]
+      },
+      {
+        "Semana  ": [{
+            "Actual  ": {
+              "Proyectos  ": "3  ",
+              "Horas  ": "26.00  ",
+              "Porcentaje  ": "57.78  "
+            }
+          },
+          {
+            "Anterior  ": {
+              "Proyectos  ": "3  ",
+              "Horas  ": "11.00  ",
+              "Porcentaje  ": "24.44"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "totalHoursProjectXDay": [{
+        "Miercoles": [{
+            "zgas": "45"
+          },
+          {
+            "t2go": "3"
+          },
+          {
+            "test": "2"
+          },
+          {
+            "prueba": "26"
+          }
+        ]
+      },
+      {
+        "Jueves": [{
+          "zgas": "45"
+        }]
+      },
+      {
+        "Viernes": [{
+            "zgas": "5"
+          },
+          {
+            "car": "21"
+          },
+          {
+            "pedron": "5"
+          },
+          {
+            "CCS": "21"
+          }
+        ]
+      },
+      {
+        "Sabado": [{
+            "zgas": "45"
+          },
+          {
+            "t2go": "23"
+          }
+        ]
+      },
+      {
+        "Domingo": [{
+            "zgas": "5"
+          },
+          {
+            "t2go": "3"
+          }
+        ]
+      },
+      {
+        "Lunes": [{
+            "zgas": "4"
+          },
+          {
+            "t2go": "2"
+          }
+        ]
+      },
+      {
+        "Martes": [{
+            "zgas": "25"
+          },
+          {
+            "t2go": "13"
+          }
+        ]
+      }
+    ]
+
+  }
+]
