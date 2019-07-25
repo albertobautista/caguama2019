@@ -409,13 +409,10 @@
             arregloNombresValues.push(miArreglo[prop][prop2])
           }
         }
-        console.log('arregloNombresValues')
-        console.log(arregloNombresValues)
+
 
         let unique = [...new Set(arregloNombresValues)];
 
-        console.log('unique')
-        console.log(unique)
 
         for (let index = 0; index < arregloValues.length; index++) {
           arreglosValues.push(arregloValues[index]);
@@ -429,8 +426,6 @@
         }
 
         for (let index = 0; index < general.length; index += 7) {
-          console.log('mio A  '+mio)
-          console.log(unique[mio])
           obj[mio] = {
             label: unique[mio],
             data: general.slice(index, (index + 7)),
@@ -441,15 +436,8 @@
 
           }
           mio++
-          console.log('mio '+mio)
-          console.log(unique[mio])
-          console.log(mio)
 
         }
-        console.log('mio 2 ')
-        console.log(mio)
-        console.log('obj')
-        console.log(obj)
 
         finalDataArray.push(obj)
         console.log('finalDataArray')
@@ -461,8 +449,6 @@
 
           }
         }
-        console.log('dataArray 1')
-        console.log(dataArray)
 
         var miObjeto = {}
         var objetoVacio = {}
@@ -485,8 +471,6 @@
             datasets: []
           };
 
-          console.log('infodata')
-          console.log(infoData)
           var contador = 0
           infoData.forEach(function (o) {
             miObjeto[contador] = {
@@ -498,8 +482,6 @@
             data.datasets.push(miObjeto[contador])
             contador++
           })
-          console.log('data')
-          console.log(data)
           var ctxWeek = document.getElementById("myChartWeek");
           var titulo = document.getElementById("titulo");
           /* Gráfica de Horas Disponibles a registrar / Horas registradas */
