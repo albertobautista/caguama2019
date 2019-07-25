@@ -5,6 +5,10 @@
     {
         "value": "grupo",
         "name": "Por Grupo"
+    },
+    {
+        "value": "recientes",
+        "name": "Recientes"
     }
 
 ]
