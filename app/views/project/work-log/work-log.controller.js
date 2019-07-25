@@ -181,14 +181,17 @@
                 {
                   targets:  5,
                   render: function (data, type, row) {
-                    return data.substr(0, 20) + '…';
+                    if(data.length > 20){
+                      return data.substr(0, 20) + '…';
+                    }           
+                    return data.substr(0, 20);
                   }
                 },
                 {
                   targets:  1,
                   render: function (data, type, row) {
                     if(data.length > 7){
-                      return data.substr(0, 20) + '…';
+                      return data.substr(0,7) + '…';
                     }           
                     return data.substr(0, 20);
                   }
