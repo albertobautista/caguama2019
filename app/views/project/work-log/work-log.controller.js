@@ -179,7 +179,7 @@
                   "defaultContent": "<center><i class='material-icons' style='cursor:pointer;'>delete</i></center>"
                 },
                 {
-                  targets: 1,
+                  targets: 1 ,
                   render: function (data, type, row) {
                     return data.substr(0, 20) + '…';
                   }
