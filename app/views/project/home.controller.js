@@ -466,7 +466,8 @@
             datasets: []
           };
 
-
+          console.log('infodata')
+          console.log(infoData)
           var contador = 0
           infoData.forEach(function (o) {
             miObjeto[contador] = {
@@ -478,6 +479,8 @@
             data.datasets.push(miObjeto[contador])
             contador++
           })
+          console.log('data')
+          console.log(data)
           var ctxWeek = document.getElementById("myChartWeek");
           var titulo = document.getElementById("titulo");
           /* Gráfica de Horas Disponibles a registrar / Horas registradas */
