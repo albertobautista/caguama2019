@@ -429,6 +429,8 @@
         }
 
         for (let index = 0; index < general.length; index += 7) {
+          console.log('mio A  '+mio)
+          console.log(unique[mio])
           obj[mio] = {
             label: unique[mio],
             data: general.slice(index, (index + 7)),
@@ -439,15 +441,19 @@
 
           }
           mio++
-          console.log('mio 1')
+          console.log('mio '+mio)
+          console.log(unique[mio])
           console.log(mio)
 
         }
         console.log('mio 2 ')
         console.log(mio)
+        console.log('obj')
+        console.log(obj)
 
         finalDataArray.push(obj)
-
+        console.log('finalDataArray')
+        console.log(finalDataArray)
         var dataArray = []
         for (let prop in finalDataArray) {
           for (let prop2 in finalDataArray[prop]) {
