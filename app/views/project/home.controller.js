@@ -457,7 +457,7 @@
         var dataArray = []
         for (let prop in finalDataArray) {
           for (let prop2 in finalDataArray[prop]) {
-            dataArray.push(finalDataArray[prop][prop2])
+            //dataArray.push(finalDataArray[prop][prop2])
 
           }
         }
