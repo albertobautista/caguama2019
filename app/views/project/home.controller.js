@@ -439,7 +439,12 @@
 
           }
           mio++
+          console.log('mio 1')
+          console.log(mio)
+
         }
+        console.log('mio 2 ')
+        console.log(mio)
 
         finalDataArray.push(obj)
 
