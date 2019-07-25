@@ -412,7 +412,7 @@
         console.log('arregloNombresValues')
         console.log(arregloNombresValues)
 
-        let unique = [new Set(arregloNombresValues)];
+        let unique = [...new Set(arregloNombresValues)];
 
         console.log('unique')
         console.log(unique)
@@ -437,7 +437,7 @@
             backgroundColor: [arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio]],
             borderColor: [arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio]],
             borderWidth: 3,
-            type: 'bar'
+            type: 'b  ar'
 
           }
           mio++
