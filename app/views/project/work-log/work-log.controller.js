@@ -190,8 +190,8 @@
                 {
                   targets:  1,
                   render: function (data, type, row) {
-                    if(data.length > 7){
-                      return data.substr(0,7) + '…';
+                    if(data.length > 20){
+                      return data.substr(0,20) + '…';
                     }           
                     return data.substr(0, 20);
                   }
