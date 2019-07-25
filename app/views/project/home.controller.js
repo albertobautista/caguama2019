@@ -376,11 +376,11 @@
         //var dias = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
         var fecha = new Date();
         var check = 0;
-        for (var index = 0; index < data[0].totalHoursProjectXDay.length; index++) {
+        for (let index = 0; index < data[0].totalHoursProjectXDay.length; index++) {
           miArray.push(data[0].totalHoursProjectXDay[index]);
         }
-        for (var prop in miArray) {
-          for (var prop2 in miArray[prop]) {
+        for (let prop in miArray) {
+          for (let prop2 in miArray[prop]) {
             arregloValues.push(miArray[prop][prop2])
             miArreglo.push(Object.keys((miArray[prop])))
           }
@@ -404,31 +404,31 @@
             }
           }*/
 
-        for (var prop in miArreglo) {
-          for (var prop2 in miArreglo[prop]) {
+        for (let prop in miArreglo) {
+          for (let prop2 in miArreglo[prop]) {
             arregloNombresValues.push(miArreglo[prop][prop2])
           }
         }
         console.log('arregloNombresValues')
         console.log(arregloNombresValues)
 
-        var unique = [new Set(arregloNombresValues)];
+        let unique = [new Set(arregloNombresValues)];
 
         console.log('unique')
         console.log(unique)
-        
-        for (var index = 0; index < arregloValues.length; index++) {
+
+        for (let index = 0; index < arregloValues.length; index++) {
           arreglosValues.push(arregloValues[index]);
         }
 
-        for (var prop in arreglosValues) {
-          for (var prop2 in arreglosValues[prop]) {
+        for (let prop in arreglosValues) {
+          for (let prop2 in arreglosValues[prop]) {
             general.push(arreglosValues[prop][prop2])
 
           }
         }
 
-        for (var index = 0; index < general.length; index += 7) {
+        for (let index = 0; index < general.length; index += 7) {
           obj[mio] = {
             label: unique[mio],
             data: general.slice(index, (index + 7)),
@@ -444,8 +444,8 @@
         finalDataArray.push(obj)
 
         var dataArray = []
-        for (var prop in finalDataArray) {
-          for (var prop2 in finalDataArray[prop]) {
+        for (let prop in finalDataArray) {
+          for (let prop2 in finalDataArray[prop]) {
             dataArray.push(finalDataArray[prop][prop2])
 
           }
@@ -462,6 +462,7 @@
         }
 
         function renderChart(infoData) {
+
           var lastElemnt = Object.keys(arregloValues[0]).reverse()[Object.keys(arregloValues[0]).reverse().length - 1] + ' - Actual'
           var arrayNewDays = []
           arrayNewDays = Object.keys(arregloValues[0]).reverse()
