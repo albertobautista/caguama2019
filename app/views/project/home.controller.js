@@ -346,6 +346,8 @@
     });
 
     $scope.$watch("vm.logForm.project", function () {
+      console.log('ALLLLLLLLLLLLLLLLLLLLLLLLL')
+      console.log(vm.logForm.project)
       return $scope.myFunc(vm.logForm.project);
     });
 
