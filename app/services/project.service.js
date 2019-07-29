@@ -88,6 +88,10 @@
       }
       return $http(config)
         .then(function (response) {
+          console.log('response')
+          console.log(response)
+          console.log('response.data')
+          console.log(response.data)
           cont = 0;
           return response.data;
         })
