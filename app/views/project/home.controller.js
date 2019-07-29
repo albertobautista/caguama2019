@@ -282,7 +282,9 @@
               $scope.myFunca(type)
             }
           } else {
+            
             $scope.myFunca(type)
+            vm.projects = null
           }
         });
       }
