@@ -272,8 +272,8 @@
           name: type.name
         };
         return ProjectService.get(filter).then(function (data) { 
-           console.log('data')
-        console.log(data)
+           console.log('data lengtttt')
+        console.log(data.length)
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
               if(data.length == 0 || data.length === 0){
