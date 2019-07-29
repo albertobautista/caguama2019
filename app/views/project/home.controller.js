@@ -276,13 +276,8 @@
         console.log(data.length)
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
-              if(data.length == 0 || data.length === 0){
-                vm.projects = 0
-                $scope.projects = 0
-              }else{              
               vm.projects = data;
               $scope.projects = vm.projects;
-              }
             } else {
               $scope.myFunca(type)
             }
