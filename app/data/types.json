@@ -1,14 +1,15 @@
-[{
+[
+    {
+        "value": "recientes",
+        "name": "Recientes"
+    },
+    {
         "value": "asignado",
         "name": "Asignado"
     },
     {
         "value": "grupo",
         "name": "Por Grupo"
-    },
-    {
-        "value": "recientes",
-        "name": "Recientes"
     }
 
 ]
