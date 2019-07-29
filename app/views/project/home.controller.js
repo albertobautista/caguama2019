@@ -278,9 +278,11 @@
             if (data.statusText != "Unauthorized") {
               if(data.length == 0 || data.length === 0){
                 vm.projects = null
-              }
+                $scope.projects = null
+              }else{              
               vm.projects = data;
               $scope.projects = vm.projects;
+              }
             } else {
               $scope.myFunca(type)
             }
