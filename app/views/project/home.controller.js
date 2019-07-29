@@ -296,7 +296,12 @@
         return StageService.get(filter).then(function (data) {
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
+              console.log('stages')
+              console.log(data)
+              console.log(data.length)
               $scope.stages = data;
+              console.log('$scope.stages')
+              console.log($scope.stages)
             } else {
               $scope.myFunc(project)
             }
