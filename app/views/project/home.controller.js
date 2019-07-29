@@ -271,7 +271,9 @@
           value: type.value,
           name: type.name
         };
-        return ProjectService.get(filter).then(function (data) {
+        return ProjectService.get(filter).then(function (data) { 
+           console.log('data')
+        console.log(data)
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
               vm.projects = data;
@@ -288,6 +290,10 @@
 
 
     $scope.myFunc = function (project) {
+      console.log('project.idProject')
+      console.log(project.idProject)
+      console.log('project.projectName')
+      console.log(project.projectName)
       if (project != null) {
         var filter = {
           idProject: project.idProject,
