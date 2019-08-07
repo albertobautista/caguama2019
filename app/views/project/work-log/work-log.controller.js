@@ -79,6 +79,7 @@
           
         })
         .catch(function (e) {
+          console.log('E dentro de controller')
           console.log(e);
           //alert("Error al cargar tus registros");
         });
