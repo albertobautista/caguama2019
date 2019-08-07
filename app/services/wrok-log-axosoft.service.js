@@ -17,11 +17,7 @@
       var baseUrl = localStorage.baseurl;
       var config = {
         method: "",
-        url: "",
-        headers: {
-          Authorization: localStorage.tokenkey,
-          "Content-Type": "application/json; charset=UTF-8"
-        }
+        url: ""
       };
       var service = {
         get: get,
