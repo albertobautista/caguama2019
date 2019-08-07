@@ -96,44 +96,20 @@
      
   
       function get() {
-        if (baseUrl != null) {
+          console.log('entro al get')
+     
           config.url ="https://tesselar.axosoft.com/api/v5/work_logs?access_token=88bb1320-f8a5-435d-ac7e-560041f22316&start_date=2019-07-10&release_id=374&project_id=102&assigned_to_id=123";
           config.method = "get";
-          contadorurl = 0;
-        } else {
-          if (contadorurl == 0) {
-            BaseUrlService.get().then(function(data) {
-              localStorage.setItem("baseurl", data.BASEURL);
-              get();
-            });
-          } else {
-            console.log("ERROR in work-log.service.js :::: BASEURL = NULL");
-          }
-          contadorurl++;
-        }
+  
+        
         return $http(config)
           .then(function(response) {
             cont = 0;
             return response.data;
           })
           .catch(function(e) {
-            if (e.statusText == "Unauthorized") {
-              if (cont == 0) {
-                TokenService.get().then(function(data) {
-                  cont++;
-                  localStorage.setItem("tokenkey", "Bearer " + data.TOKEN);
-                  config.headers.Authorization = "Bearer " + data.TOKEN;
-                  get();
-                });
-              } else {
-                console.log(
-                  "ERROR in work-log.service.js ::::: GET ALL WORKLOGS"
-                );
-                console.log(e);
-                cont = 0;
-                return e;
-              }
-            }
+            console.log('EEEE')
+            console.log(e)
           });
       }
   
