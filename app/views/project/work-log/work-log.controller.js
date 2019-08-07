@@ -39,6 +39,7 @@
     "$state",
     "$filter",
     "WorkLogService",
+    "WorkLogAxosoftService",
     "$localStorage",
     "toastr"
   ];
@@ -50,6 +51,7 @@
     $state,
     $filter,
     WorkLogService,
+    WorkLogAxosoftService,
     $localStorage,
     toastr
   ) {
@@ -61,10 +63,27 @@
     function activate() {
       if (vm.auth.isAuthenticated() == true) {
         getWorkLogs();
+        getWorkLogsAxosoft();
       } else {
         vm.auth.logout();
       }
     }
+
+    function getWorkLogsAxosoft() {
+      console.log('Entro a axosfot')
+      return WorkLogAxosoftService.get()
+        .then(function (data) {
+          console.log('data')
+          console.log(data)
+          
+          
+        })
+        .catch(function (e) {
+          console.log(e);
+          //alert("Error al cargar tus registros");
+        });
+    }
+
 
     /**
      * Get all worklogs from Salesforce API
