@@ -17,13 +17,14 @@
       var baseUrl = localStorage.baseurl;
       var config = {
         method: "",
-        url: ""
+        url: "",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8"
+          }
       };
       var service = {
         get: get,
-        post: post,
-        getWithId: getWithId,
-        deleteWorklog: deleteWorklog
+        post: post
       };
   
       return service;
@@ -92,15 +93,16 @@
      
   
       function get() {
-          console.log('entro al get')
-     
+          console.log('entro al get')     
           config.url ="https://tesselar.axosoft.com/api/v5/work_logs?access_token=88bb1320-f8a5-435d-ac7e-560041f22316&start_date=2019-07-10&release_id=374&project_id=102&assigned_to_id=123";
-          config.method = "get";
-  
-        
+          config.method = "GET";          
         return $http(config)
           .then(function(response) {
-            cont = 0;
+            console.log('response')
+            console.log(response)
+
+            console.log('response.data')
+            console.log(response.data)
             return response.data;
           })
           .catch(function(e) {
@@ -108,103 +110,7 @@
             console.log(e)
           });
       }
-  
-      function getWithId(filter) {
-        if( filter.idStage!=null){
-        if (baseUrl != null) {
-          config.url =
-            baseUrl +
-            "/services/apexrest/t2go1/RegistroTrabajo/?codigoagente=" +
-            localStorage.agentCode +
-            "&todoslosregistros=0&idetapa=" +
-            filter.idStage;
-          config.method = "get";
-          contadorurl = 0;
-        } else {
-          if (contadorurl == 0) {
-            BaseUrlService.get().then(function(data) {
-              localStorage.setItem("baseurl", data.BASEURL);
-              get(filter);
-            });
-          } else {
-            console.log("ERROR in work-log.service.js :::: BASEURL = NULL");
-          }
-          contadorurl++;
-        }
-        return $http(config)
-          .then(function(response) {
-            cont = 0;
-            return response.data;
-          })
-          .catch(function(e) {
-            if (e.statusText == "Unauthorized") {
-              if (cont == 0) {
-                TokenService.get().then(function(data) {
-                  cont++;
-                  localStorage.setItem("tokenkey", "Bearer " + data.TOKEN);
-                  config.headers.Authorization = "Bearer " + data.TOKEN;
-                  get(filter);
-                });
-              } else {
-                console.log("ERROR in work.log.service.js ::::: GET");
-                console.log(e);
-                cont = 0;
-                return e;
-              }
-            }
-          });
-      }
-    }
-    function deleteWorklog (log) {
-      if (baseUrl != null) {
-        config.url =
-          baseUrl +
-          "/services/apexrest/t2go1/RegistroTrabajo/?idWorklog="+log;
-        config.method = "delete";
-        contadorurl = 0;
-      } else {
-        if (contadorurl == 0) {
-          BaseUrlService.get().then(function(data) {
-            localStorage.setItem("baseurl", data.BASEURL);
-            deleteWorklog();
-          });
-        } else {
-          console.log("ERROR in work-log.service.js :::: BASEURL = NULL");
-        }
-        contadorurl++;
-      }
-      return $http(config)
-        .then(function(response) {
-          cont = 0;
-          return response.data;
-        })
-        .catch(function(e) {
-          if (e.statusText == "Unauthorized") {
-            if (cont == 0) {
-              TokenService.get().then(function(data) {
-                cont++;
-                localStorage.setItem("tokenkey", "Bearer " + data.TOKEN);
-                config.headers.Authorization = "Bearer " + data.TOKEN;
-                deleteWorklog();
-              });
-            } else {
-              console.log(
-                "ERROR in work-log.service.js ::::: DELETE"
-              );
-              console.log(e);
-              toastr.error(e.data.message,'Notificación',{
-                positionClass: 'toast-top-center',
-                closeButton: false //,
-             //   iconClass: 'toast-gray'
-                
-              });
-              cont = 0;
-              return e;
-            }
-          }
-        });
-    }
-  
+    
   }
   })();
   
