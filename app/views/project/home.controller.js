@@ -74,6 +74,10 @@
     TokenService
   ) {
     var vm = this;
+    vm.porcentLeft;
+    vm.porcentRight;
+    vm.BudgetedHours;
+    vm.ActualHours;
     vm.auth = authService;
     vm.categories = [{}];
     vm.types = [];
@@ -135,6 +139,7 @@
     function getWeekData() {
       return HomeService.get()
     }
+  
 
     function addLog(log) {
       if (!log || log.horas === 0) {
@@ -335,6 +340,28 @@
             }
           } else {
             $scope.myFunc2(stage)
+
+          }
+        });
+      }
+    };
+    
+    $scope.getprogress = function (stage) {
+      if (stage != null) {
+        var filter = {
+          idStage: stage.idStage,
+          agentCode: localStorage.agentCode
+        };
+        return ProgressBar_Stage_Budget.get(filter).then(function (data) {
+          if (data != undefined) {
+            if (data.statusText != "Unauthorized") {
+              vm.BudgetedHours=data.BudgetedHours;
+              vm.ActualHours=data.ActualHours;
+              var  porcentLeft=vm.ActualHours/BudgetedHours*100;
+              var  porcentRight=100-porcentLeft;
+            } else {
+            }
+          } else {
 
           }
         });
