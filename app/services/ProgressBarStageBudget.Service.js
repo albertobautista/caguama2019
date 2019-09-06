@@ -29,8 +29,12 @@
     function get(filter) {
       console.log('prrroorororororororororo')
       console.log(filter)
+      console.log(filter.idStage.idStage)
+      console.log(filter.agentCode)
+      var stage =filter.idStage.idStage
+      var agent =filter.agentCode
       if (baseUrl != null) {
-        config.url = baseUrl + '/services/apexrest/t2go1/Stage_Budge/?' + 'idStage=' + filter.idStage.idStage + '&codeAgent=' + filter.idStage
+        config.url = baseUrl + '/services/apexrest/t2go1/Stage_Budge/?' + 'idStage=' + stage+ '&codeAgent=' + agent
         contadorurl = 0
       } else {
         if (contadorurl == 0) {
