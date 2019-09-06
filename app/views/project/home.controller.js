@@ -356,6 +356,8 @@
         return ProgressBarStageBudgetService.get(filter).then(function (data) {
           console.log('-----------------------------sssssssssssss----------------------')
           console.log(data)
+          console.log(data.BudgetedHours)
+          console.log(data.ActualHours)
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
               vm.BudgetedHours=data.BudgetedHours;
