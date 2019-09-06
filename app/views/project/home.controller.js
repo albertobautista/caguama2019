@@ -76,10 +76,10 @@
     ProgressBarStageBudgetService
   ) {
     var vm = this;
-    vm.porcentLeft;
-    vm.porcentRight;
-    vm.BudgetedHours;
-    vm.ActualHours;
+    vm.porcentLeft=0;
+    vm.porcentRight=0;
+    vm.BudgetedHours=0;
+    vm.ActualHours=0;
     vm.auth = authService;
     vm.categories = [{}];
     vm.types = [];
