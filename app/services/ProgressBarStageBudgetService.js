@@ -3,11 +3,11 @@
 
   angular
     .module('app')
-    .factory('ProgressBar_Stage_Budget', ProgressBar_Stage_Budget);
+    .factory('ProgressBarStageBudgetService', ProgressBarStageBudgetService);
 
     ProgressBar_Stage_Budget.$inject = ['$http', 'TokenService'];
 
-  function ProgressBar_Stage_Budget($http, TokenService) {
+  function ProgressBarStageBudgetService($http, TokenService) {
     var data = null;
     var cont = 0,
       contadorurl = 0

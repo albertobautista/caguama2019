@@ -49,7 +49,7 @@
     "toastr",
     "$document",
     "TokenService",
-    "ProgressBar_Stage_Budget"
+    "ProgressBarStageBudgetService"
   ];
  
   function homeController(
@@ -73,7 +73,7 @@
     toastr,
     $document,
     TokenService,
-    ProgressBar_Stage_Budget
+    ProgressBarStageBudgetService
   ) {
     var vm = this;
     vm.porcentLeft;
@@ -357,7 +357,7 @@
           idStage: stage.idStage,
           agentCode: localStorage.agentCode
         };
-        return ProgressBar_Stage_Budget.get(filter).then(function (data) {
+        return ProgressBarStageBudgetService.get(filter).then(function (data) {
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
               vm.BudgetedHours=data.BudgetedHours;
