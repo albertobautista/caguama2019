@@ -11,18 +11,18 @@
           };
           scope.$watch(scope.isLoading, function (v) {
             if (v) {
-              try{
-              angular.element('#formPrin')[0].style.opacity = "0.4";
-            }catch(e){}
+              try {
+                angular.element('#formPrin')[0].style.opacity = "0.4";
+              } catch (e) {}
               scope.globalCallout = true;
               elm.show();
             } else {
-              try{
-            angular.element('#formPrin')[0].style.opacity = "1";
-          }catch(e){}
-            elm.hide();
-            scope.globalCallout = false;
-          }
+              try {
+                angular.element('#formPrin')[0].style.opacity = "1";
+              } catch (e) {}
+              elm.hide();
+              scope.globalCallout = false;
+            }
           });
         }
       }
@@ -51,7 +51,7 @@
     "TokenService",
     "ProgressBarStageBudgetService"
   ];
- 
+
   function homeController(
     $http,
     authService,
@@ -76,10 +76,10 @@
     ProgressBarStageBudgetService
   ) {
     var vm = this;
-    vm.porcentLeft=0;
-    vm.porcentRight=0;
-    vm.BudgetedHours=0;
-    vm.ActualHours=0;
+    vm.porcentLeft = 0;
+    vm.porcentRight = 0;
+    vm.BudgetedHours = 0;
+    vm.ActualHours = 0;
     vm.auth = authService;
     vm.categories = [{}];
     vm.types = [];
@@ -117,7 +117,7 @@
       });
 
     }
-    
+
     function activate() {
 
 
@@ -141,7 +141,7 @@
     function getWeekData() {
       return HomeService.get()
     }
-  
+
 
     function addLog(log) {
       if (!log || log.horas === 0) {
@@ -204,7 +204,7 @@
         }
       }
     });
-   
+
     function getCleanForm() {
       return {
         date: $filter("date")(Date.now(), "yyyy/MM/dd"),
@@ -278,9 +278,9 @@
           value: type.value,
           name: type.name
         };
-        return ProjectService.get(filter).then(function (data) { 
-           console.log('data lengtttt')
-        console.log(data.length)
+        return ProjectService.get(filter).then(function (data) {
+          console.log('data lengtttt')
+          console.log(data.length)
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
               vm.projects = data;
@@ -289,9 +289,9 @@
               $scope.myFunca(type)
             }
           } else {
-            
+
             $scope.myFunca(type)
-            
+
           }
         });
       }
@@ -343,45 +343,43 @@
         });
       }
     };
-    
+
     $scope.getprogress = function (stage) {
-      var danger='progress-bar progress-bar-danger progress-bar-striped active';
-      var success ='progress-bar progress-bar-success progress-bar-striped active';
-      var warning ='progress-bar progress-bar-warning progress-bar-striped active';
+      var danger = 'progress-bar progress-bar-danger progress-bar-striped active';
+      var success = 'progress-bar progress-bar-success progress-bar-striped active';
+      var warning = 'progress-bar progress-bar-warning progress-bar-striped active';
       if (stage != null) {
         var filter = {
           idStage: stage.idStage,
           agentCode: localStorage.agentCode
         };
-        return ProgressBarStageBudgetService.get(filter).then(function (data) {
+        return ProgressBarStageBudgetService.get(filter).then(function (result) {
+          if (result != undefined && result != null ) {
+          var data = JSON.parse(result)
           console.log('-----------------------------sssssssssssss----------------------')
           console.log(data)
           console.log(data.BudgetedHours)
           console.log(data.ActualHours)
-          if (data != undefined) {
-            if (data.statusText != "Unauthorized") {
-              vm.BudgetedHours=data.BudgetedHours;
-              vm.ActualHours=data.ActualHours;
-              var  porcentLeft=vm.ActualHours/vm.BudgetedHours*100;
-              var  porcentRight=100-porcentLeft;
+ 
+              vm.BudgetedHours = data.BudgetedHours;
+              vm.ActualHours = data.ActualHours;
+              var porcentLeft = vm.ActualHours / vm.BudgetedHours * 100;
+              var porcentRight = 100 - porcentLeft;
               console.log('kakakakakakakakakakakakakakakaakak--------------------')
               console.log(porcentLeft)
               console.log(porcentRight)
               console.log(data)
-              document.getElementById("progressbarleft").style.width = porcentLeft+'%';
-              document.getElementById("progressbarright").style.width = porcentRight+'%';
-              if(porcentLeft<=33){
-                document.getElementById("progressbarleft").className = success; 
-              }else if(porcentLeft>33&&porcentLeft>=66){
+              document.getElementById("progressbarleft").style.width = porcentLeft + '%';
+              document.getElementById("progressbarright").style.width = porcentRight + '%';
+              if (porcentLeft <= 33) {
+                document.getElementById("progressbarleft").className = success;
+              } else if (porcentLeft > 33 && porcentLeft >= 66) {
                 document.getElementById("progressbarleft").className = warning;
-              }else if(porcentLeft>66){
+              } else if (porcentLeft > 66) {
                 document.getElementById("progressbarleft").className = danger;
               }
-            } else {
-            }
-          } else {
-
-          }
+            } else {}
+          
         });
       }
     };
@@ -571,16 +569,16 @@
           myChartWeek.update();
         }
         $(document).ready(function () {
-          $("button").hover(function(){
+          $("button").hover(function () {
 
             $(this).css("background", "#F5F5F5");
             $(this).css("border-radius", "90%");
-            }, function(){
+          }, function () {
             $(this).css("background", "#FFFFFF");
             $(this).css("border-radius", "0%");
           });
-         
-          setTimeout(function(){
+
+          setTimeout(function () {
             titulo.style.visibility = "visible";
             console.log('dataArray')
             console.log(dataArray)
