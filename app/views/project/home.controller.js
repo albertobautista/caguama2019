@@ -369,14 +369,14 @@
               console.log(porcentLeft)
               console.log(porcentRight)
               console.log(data)
-              document.getElementById("progressbarleft").style.width = porcentLeft + '%';
-              document.getElementById("progressbarright").style.width = porcentRight + '%';
+              angular.element('#progressbarleft')[0].style.width = porcentLeft + '%';
+              angular.element('#progressbarright')[0].style.width = porcentRight + '%';
               if (porcentLeft <= 33) {
-                document.getElementById("progressbarleft").className = success;
+                angular.element('#progressbarleft')[0].className = success;
               } else if (porcentLeft > 33 && porcentLeft >= 66) {
-                document.getElementById("progressbarleft").className = warning;
+                angular.element('#progressbarleft')[0].className = warning;
               } else if (porcentLeft > 66) {
-                document.getElementById("progressbarleft").className = danger;
+                angular.element('#progressbarleft')[0].className = danger;
               }
             } else {}
           
