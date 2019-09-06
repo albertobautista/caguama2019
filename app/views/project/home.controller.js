@@ -362,7 +362,7 @@
             if (data.statusText != "Unauthorized") {
               vm.BudgetedHours=data.BudgetedHours;
               vm.ActualHours=data.ActualHours;
-              var  porcentLeft=vm.ActualHours/BudgetedHours*100;
+              var  porcentLeft=vm.ActualHours/vm.BudgetedHours*100;
               var  porcentRight=100-porcentLeft;
               document.getElementById("progressbarleft").style.width = porcentLeft+'%';
               document.getElementById("progressbarright").style.width = porcentRight+'%';
