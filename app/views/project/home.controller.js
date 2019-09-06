@@ -299,10 +299,6 @@
 
 
     $scope.myFunc = function (project) {
-      console.log('project.idProject')
-      console.log(project.idProject)
-      console.log('project.projectName')
-      console.log(project.projectName)
       if (project != null) {
         var filter = {
           idProject: project.idProject,
@@ -358,12 +354,18 @@
           agentCode: localStorage.agentCode
         };
         return ProgressBarStageBudgetService.get(filter).then(function (data) {
+          console.log('-----------------------------sssssssssssss----------------------')
+          console.log(data)
           if (data != undefined) {
             if (data.statusText != "Unauthorized") {
               vm.BudgetedHours=data.BudgetedHours;
               vm.ActualHours=data.ActualHours;
               var  porcentLeft=vm.ActualHours/vm.BudgetedHours*100;
               var  porcentRight=100-porcentLeft;
+              console.log('kakakakakakakakakakakakakakakaakak--------------------')
+              console.log(porcentLeft)
+              console.log(porcentRight)
+              console.log(data)
               document.getElementById("progressbarleft").style.width = porcentLeft+'%';
               document.getElementById("progressbarright").style.width = porcentRight+'%';
               if(porcentLeft<=33){
