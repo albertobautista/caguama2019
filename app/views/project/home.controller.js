@@ -375,10 +375,13 @@
               angular.element('#progressbarright')[0].style.width = porcentRight + '%';
               console.log(angular.element('#progressbarleft')[0]);
               if (porcentLeft <= 33) {
+                console.log('11111111111111111111111111111111111111111')
                 angular.element('#progressbarleft')[0].className = success;
               } else if (porcentLeft > 33 && porcentLeft >= 66) {
+                console.log('22222222222222222222222222222222222222222222222222222222')
                 angular.element('#progressbarleft')[0].className = warning;
               } else if (porcentLeft > 66) {
+                console.log('3333333333333333333333333333333333333333333333333333333333')
                 angular.element('#progressbarleft')[0].className = danger;
               }
             } else {}
