@@ -369,8 +369,11 @@
               console.log(porcentLeft)
               console.log(porcentRight)
               console.log(data)
+              console.log('angular.element(#progressbarleft)[0]');
+              console.log(angular.element('#progressbarleft')[0]);
               angular.element('#progressbarleft')[0].style.width = porcentLeft + '%';
               angular.element('#progressbarright')[0].style.width = porcentRight + '%';
+              console.log(angular.element('#progressbarleft')[0]);
               if (porcentLeft <= 33) {
                 angular.element('#progressbarleft')[0].className = success;
               } else if (porcentLeft > 33 && porcentLeft >= 66) {
