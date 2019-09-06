@@ -347,6 +347,7 @@
     };
     
     $scope.getprogress = function (stage) {
+      var danger='progress-bar progress-bar-danger progress-bar-striped active';
       if (stage != null) {
         var filter = {
           idStage: stage.idStage,
@@ -359,6 +360,14 @@
               vm.ActualHours=data.ActualHours;
               var  porcentLeft=vm.ActualHours/BudgetedHours*100;
               var  porcentRight=100-porcentLeft;
+              if(porcentLeft<33){
+
+                
+              }else if(porcentLeft>33&&porcentLeft>66){
+
+              }else if(porcentLeft>66){
+
+              }
             } else {
             }
           } else {
