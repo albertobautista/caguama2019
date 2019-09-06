@@ -27,8 +27,10 @@
     return service;
 
     function get(filter) {
+      console.log('prrroorororororororororo')
+      console.log(filter)
       if (baseUrl != null) {
-        config.url = baseUrl + '/services/apexrest/t2go1/Stage_Budge /?' + 'idStage=' + filter.idStage + '&codeAgent=' + filter.idStage
+        config.url = baseUrl + '/services/apexrest/t2go1/Stage_Budge/?' + 'idStage=' + filter.idStage + '&codeAgent=' + filter.idStage
         contadorurl = 0
       } else {
         if (contadorurl == 0) {
