@@ -48,7 +48,8 @@
     "$localStorage",
     "toastr",
     "$document",
-    "TokenService"
+    "TokenService",
+    "ProgressBar_Stage_Budget"
   ];
  
   function homeController(
@@ -71,7 +72,8 @@
     $localStorage,
     toastr,
     $document,
-    TokenService
+    TokenService,
+    ProgressBar_Stage_Budget
   ) {
     var vm = this;
     vm.porcentLeft;
