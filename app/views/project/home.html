@@ -96,20 +96,22 @@
                             <span class="bold">Etapa:</span>
                             {{vm.logForm.stage.stageName }}
                         </p>
-                    </center>   
+                    </center>
                 </div>
                 <br>
                 <div class="col-md-12 hidden-sm hidden-xs">
                     <center>
-                            <div class="progress">
-                                    <div id="perro1" class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                                     45% Complete
-                                    </div>
-                                    <div id="perro2" class="progress-bar progress-bar-info"  style="width: 5%">
-                                            55% Complete
-                                  </div>
-                                   
-                                  </div>
+                        <div class="progress">
+                            <div id="progressbarleft" class="progress-bar progress-bar-warning progress-bar-striped active"
+                                role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 95%">
+                                {{ vm.ActualHours }}hrs registradas
+                            </div>
+                            <div id="progressbarright" class="progress-bar progress-bar-info" style="width: 5%">
+                                {{ vm.BudgetedHours }}hrs restantes
+                            </div>
+
+                        </div>
                     </center>
                 </div>
                 <br>
@@ -307,23 +309,23 @@
         <br>
         <!-- <form flex="60" novalidate name="loginForm" md-whiteframe="2" layout-padding>
 <div class="row">
-    <div class="col-md-12">
-        <center>
-            <img src="../assets/img/logo.png " alt="Tesselar logo" style="width:80%;" />
-        </center>
-    </div>
+<div class="col-md-12">
+<center>
+    <img src="../assets/img/logo.png " alt="Tesselar logo" style="width:80%;" />
+</center>
+</div>
 </div>
 <sbr>
-    <div class="row">
-        <div class="col-md-12">
-            <center>
-                <md-button flex id="button-login" type="submit" class="md-primary md-raised" ng-disabled="loginForm.$invalid" aria-label="button-login"
-                    ng-click="vm.auth.login()">
-                    Iniciar sesión
-                </md-button>
-            </center>
-        </div>
-    </div>
+<div class="row">
+<div class="col-md-12">
+    <center>
+        <md-button flex id="button-login" type="submit" class="md-primary md-raised" ng-disabled="loginForm.$invalid" aria-label="button-login"
+            ng-click="vm.auth.login()">
+            Iniciar sesión
+        </md-button>
+    </center>
+</div>
+</div>
 </form> -->
         <!-- <form flex="51" novalidate name="loginForm" md-whiteframe="2" layout-padding> -->
         <form flex="51" novalidate name="loginForm" layout-padding>

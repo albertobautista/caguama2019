@@ -348,6 +348,8 @@
     
     $scope.getprogress = function (stage) {
       var danger='progress-bar progress-bar-danger progress-bar-striped active';
+      var success ='progress-bar progress-bar-success progress-bar-striped active';
+      var warning ='progress-bar progress-bar-warning progress-bar-striped active';
       if (stage != null) {
         var filter = {
           idStage: stage.idStage,
@@ -360,13 +362,14 @@
               vm.ActualHours=data.ActualHours;
               var  porcentLeft=vm.ActualHours/BudgetedHours*100;
               var  porcentRight=100-porcentLeft;
-              if(porcentLeft<33){
-
-                
-              }else if(porcentLeft>33&&porcentLeft>66){
-
+              document.getElementById("progressbarleft").style.width = porcentLeft+'%';
+              document.getElementById("progressbarright").style.width = porcentRight+'%';
+              if(porcentLeft<=33){
+                document.getElementById("progressbarleft").className = success; 
+              }else if(porcentLeft>33&&porcentLeft>=66){
+                document.getElementById("progressbarleft").className = warning;
               }else if(porcentLeft>66){
-
+                document.getElementById("progressbarleft").className = danger;
               }
             } else {
             }
@@ -382,8 +385,6 @@
     });
 
     $scope.$watch("vm.logForm.project", function () {
-      console.log('ALLLLLLLLLLLLLLLLLLLLLLLLL')
-      console.log(vm.logForm.project)
       return $scope.myFunc(vm.logForm.project);
     });
 
@@ -391,6 +392,10 @@
       if (vm.logForm.stage != undefined) {
         getMyLogs(vm.logForm.stage);
       }
+      var filter = {
+        idStage: vm.logForm.stage
+      };
+      $scope.getprogress(filter)
       return $scope.myFunc2(vm.logForm.stage);
     });
 
