@@ -365,11 +365,11 @@
             console.log(data.BudgetedHours)
             console.log(data.ActualHours)
 
-            vm.BudgetedHours = data.BudgetedHours;
-            vm.ActualHours = data.ActualHours;
-            let porcentLeft = vm.ActualHours / vm.BudgetedHours * 100;
+         //   vm.BudgetedHours = data.BudgetedHours;
+          //  vm.ActualHours = data.ActualHours;
+            let porcentLeft = data.ActualHours / data.BudgetedHours * 100;
             let porcentRight = 100 - porcentLeft;
-            if (vm.BudgetedHours <= vm.ActualHours) {
+            if (data.BudgetedHours <= data.ActualHours) {
               console.log('ssssssssssssssssssssss--------------------')
               vm.BudgetedHours = vm.BudgetedHours - vm.ActualHours;
             }
@@ -382,8 +382,8 @@
 
             console.log(angular.element('#progressbarleft')[0]);
             angular.element('#progressbarright')[0].className = info;
-            vm.ActualHours = vm.ActualHours + 'hrs registradas';
-            vm.BudgetedHours = vm.BudgetedHours + 'hrs restante'
+            vm.ActualHours =  data.ActualHours + 'hrs registradas';
+            vm.BudgetedHours = data.BudgetedHours + 'hrs restante'
             if (porcentLeft <= 33) {
               console.log('11111111111111111111111111111111111111111')
               angular.element('#progressbarleft')[0].className = success;
@@ -399,8 +399,8 @@
               porcentRight = 70;
               angular.element('#progressbarleft')[0].className = striped;
               angular.element('#progressbarright')[0].className = danger;
-              var aux=vm.ActualHours;
-              vm.ActualHours  = vm.BudgetedHours + 'hrs presupuestadas';
+              var aux=data.ActualHours;
+              vm.ActualHours  = data.BudgetedHours + 'hrs presupuestadas';
               vm.BudgetedHours = aux + 'hrs registradas'
             }
             angular.element('#progressbarleft')[0].style.width = porcentLeft + '%';
