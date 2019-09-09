@@ -356,8 +356,10 @@
           agentCode: localStorage.agentCode
         };
         return ProgressBarStageBudgetService.get(filter).then(function (result) {
+          console.log(result)
           if (result != undefined && result != null) {
             var data = JSON.parse(result)
+         
             console.log('-----------------------------sssssssssssss----------------------')
             console.log(data)
             console.log(data.BudgetedHours)
