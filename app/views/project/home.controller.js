@@ -399,8 +399,9 @@
               porcentRight = 70;
               angular.element('#progressbarleft')[0].className = striped;
               angular.element('#progressbarright')[0].className = danger;
-              vm.ActualHours = vm.BudgetedHours + 'hrs presupuestadas';
-              vm.BudgetedHours = vm.ActualHours + 'hrs registradas'
+              var aux=vm.ActualHours;
+              vm.ActualHours  = vm.BudgetedHours + 'hrs presupuestadas';
+              vm.BudgetedHours = aux + 'hrs registradas'
             }
             angular.element('#progressbarleft')[0].style.width = porcentLeft + '%';
             angular.element('#progressbarright')[0].style.width = porcentRight + '%';
