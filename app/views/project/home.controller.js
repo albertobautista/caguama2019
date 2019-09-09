@@ -367,8 +367,8 @@
 
             vm.BudgetedHours = data.BudgetedHours;
             vm.ActualHours = data.ActualHours;
-            var porcentLeft = vm.ActualHours / vm.BudgetedHours * 100;
-            var porcentRight = 100 - porcentLeft;
+            let porcentLeft = vm.ActualHours / vm.BudgetedHours * 100;
+            let porcentRight = 100 - porcentLeft;
             if (vm.BudgetedHours <= vm.ActualHours) {
               vm.BudgetedHours = vm.BudgetedHours - vm.ActualHours;
             }
