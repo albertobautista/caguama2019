@@ -13,13 +13,13 @@
             if (v) {
               try {
                 angular.element('#formPrin')[0].style.opacity = "0.4";
-              } catch (e) {}
+              } catch (e) { }
               scope.globalCallout = true;
               elm.show();
             } else {
               try {
                 angular.element('#formPrin')[0].style.opacity = "1";
-              } catch (e) {}
+              } catch (e) { }
               elm.hide();
               scope.globalCallout = false;
             }
@@ -238,7 +238,7 @@
               var lastWorklog
               try {
                 lastWorklog = new Date(data[0].workDate);
-              } catch (e) {}
+              } catch (e) { }
               if (dateNotice > lastWorklog || lastWorklog == undefined) {
                 var bnotice = localStorage.getItem("Notice");
                 if (bnotice == null || bnotice < 1) {
@@ -348,44 +348,67 @@
       var danger = 'progress-bar progress-bar-danger progress-bar-striped active';
       var success = 'progress-bar progress-bar-success progress-bar-striped active';
       var warning = 'progress-bar progress-bar-warning progress-bar-striped active';
+      var info = 'progress-bar progress-bar-info progress-bar-striped';
+      var striped = 'progress-bar progress-bar-striped active';
       if (stage != null) {
         var filter = {
           idStage: stage.idStage,
           agentCode: localStorage.agentCode
         };
         return ProgressBarStageBudgetService.get(filter).then(function (result) {
-          if (result != undefined && result != null ) {
-          var data = JSON.parse(result)
-          console.log('-----------------------------sssssssssssss----------------------')
-          console.log(data)
-          console.log(data.BudgetedHours)
-          console.log(data.ActualHours)
- 
-              vm.BudgetedHours = data.BudgetedHours;
-              vm.ActualHours = data.ActualHours;
-              var porcentLeft = vm.ActualHours / vm.BudgetedHours * 100;
-              var porcentRight = 100 - porcentLeft;
-              console.log('kakakakakakakakakakakakakakakaakak--------------------')
-              console.log(porcentLeft)
-              console.log(porcentRight)
-              console.log(data)
-              console.log('angular.element(#progressbarleft)[0]');
-              console.log(angular.element('#progressbarleft')[0]);
-              angular.element('#progressbarleft')[0].style.width = porcentLeft + '%';
-              angular.element('#progressbarright')[0].style.width = porcentRight + '%';
-              console.log(angular.element('#progressbarleft')[0]);
-              if (porcentLeft <= 33) {
-                console.log('11111111111111111111111111111111111111111')
-                angular.element('#progressbarleft')[0].className = success;
-              } else if (porcentLeft > 33 && porcentLeft >= 66) {
-                console.log('22222222222222222222222222222222222222222222222222222222')
-                angular.element('#progressbarleft')[0].className = warning;
-              } else if (porcentLeft > 66) {
-                console.log('3333333333333333333333333333333333333333333333333333333333')
-                angular.element('#progressbarleft')[0].className = danger;
-              }
-            } else {}
-          
+          if (result != undefined && result != null) {
+            var data = JSON.parse(result)
+            console.log('-----------------------------sssssssssssss----------------------')
+            console.log(data)
+            console.log(data.BudgetedHours)
+            console.log(data.ActualHours)
+
+            vm.BudgetedHours = data.BudgetedHours;
+            vm.ActualHours = data.ActualHours;
+            var porcentLeft = vm.ActualHours / vm.BudgetedHours * 100;
+            var porcentRight = 100 - porcentLeft;
+            if (vm.BudgetedHours <= vm.ActualHours) {
+              vm.BudgetedHours = vm.BudgetedHours - vm.ActualHours;
+            }
+            console.log('kakakakakakakakakakakakakakakaakak--------------------')
+            console.log(porcentLeft)
+            console.log(porcentRight)
+            console.log(data)
+            console.log('angular.element(#progressbarleft)[0]');
+            console.log(angular.element('#progressbarleft')[0]);
+
+            console.log(angular.element('#progressbarleft')[0]);
+            angular.element('#progressbarright')[0].className = info;
+            vm.ActualHours = vm.ActualHours + 'hrs registradas';
+            vm.BudgetedHours = vm.BudgetedHours + 'hrs restante'
+            if (porcentLeft <= 33) {
+              console.log('11111111111111111111111111111111111111111')
+              angular.element('#progressbarleft')[0].className = success;
+            } else if (porcentLeft > 33 && porcentLeft >= 66) {
+              console.log('22222222222222222222222222222222222222222222222222222222')
+              angular.element('#progressbarleft')[0].className = warning;
+            } else if (porcentLeft > 66 && porcentLeft <= 100) {
+              console.log('3333333333333333333333333333333333333333333333333333333333')
+              angular.element('#progressbarleft')[0].className = danger;
+            } else if (porcentLeft > 100) {
+              porcentLeft = 30;
+              porcentRight = 70;
+              angular.element('#progressbarleft')[0].className = striped;
+              angular.element('#progressbarright')[0].className = danger;
+              vm.ActualHours = vm.BudgetedHours + 'hrs presupuestadas';
+              vm.BudgetedHours = vm.ActualHours + 'hrs registradas'
+            }
+            angular.element('#progressbarleft')[0].style.width = porcentLeft + '%';
+            angular.element('#progressbarright')[0].style.width = porcentRight + '%';
+          } else {
+            angular.element('#progressbarleft')[0].className = striped;
+            angular.element('#progressbarright')[0].className = info;
+            angular.element('#progressbarleft')[0].style.width = 100 + '%';
+            angular.element('#progressbarright')[0].style.width = 0 + '%';
+            vm.ActualHours = 'Sin presupuesto';
+            vm.BudgetedHours = '';
+          }
+
         });
       }
     };
@@ -410,189 +433,189 @@
     });
 
     midataWeek.then(function (data) {
-        ///////////////////////////////////////////
-        var data
-        try {
+      ///////////////////////////////////////////
+      var data
+      try {
 
-          data = JSON.parse(data);
-        } catch (error) {
-          console.log(error)
+        data = JSON.parse(data);
+      } catch (error) {
+        console.log(error)
+      }
+      // console.log('data')
+      // console.log(data)
+      // console.log('data[7]')
+      //console.log(data[7].totalHoursProjectXDay)
+
+      var miArray = [];
+      var miArreglo = []
+
+      var miArray = [];
+      var miArreglo = []
+      var arregloValues = []
+      var arregloNombresValues = []
+      var arreglosValues = []
+      var general = []
+      var finalDataArray = [];
+      var mio = 0;
+      var obj = {}
+      // rgba(210,208,205,1) - Gris
+      // rgba(100,32,119, 1) - Morado
+      // rgba(52,217,195, 1) - Azul turquesa
+      var arrayColores = ['rgba(100,32,119, 1)', 'rgba(52,217,195, 1)', 'rgba(66,109,169, 1)', 'rgba(167,230,217, 1)', 'rgba(104,2,2, 1)', 'rgba(210,208,205,1)'];
+      //var dias = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
+      var fecha = new Date();
+      var check = 0;
+      for (let index = 0; index < data[0].totalHoursProjectXDay.length; index++) {
+        miArray.push(data[0].totalHoursProjectXDay[index]);
+      }
+      for (let prop in miArray) {
+        for (let prop2 in miArray[prop]) {
+          arregloValues.push(miArray[prop][prop2])
+          miArreglo.push(Object.keys((miArray[prop])))
         }
-        // console.log('data')
-        // console.log(data)
-        // console.log('data[7]')
-        //console.log(data[7].totalHoursProjectXDay)
-
-        var miArray = [];
-        var miArreglo = []
-
-        var miArray = [];
-        var miArreglo = []
-        var arregloValues = []
-        var arregloNombresValues = []
-        var arreglosValues = []
-        var general = []
-        var finalDataArray = [];
-        var mio = 0;
-        var obj = {}
-        // rgba(210,208,205,1) - Gris
-        // rgba(100,32,119, 1) - Morado
-        // rgba(52,217,195, 1) - Azul turquesa
-        var arrayColores = ['rgba(100,32,119, 1)', 'rgba(52,217,195, 1)', 'rgba(66,109,169, 1)', 'rgba(167,230,217, 1)', 'rgba(104,2,2, 1)', 'rgba(210,208,205,1)'];
-        //var dias = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
-        var fecha = new Date();
-        var check = 0;
-        for (let index = 0; index < data[0].totalHoursProjectXDay.length; index++) {
-          miArray.push(data[0].totalHoursProjectXDay[index]);
-        }
-        for (let prop in miArray) {
-          for (let prop2 in miArray[prop]) {
-            arregloValues.push(miArray[prop][prop2])
-            miArreglo.push(Object.keys((miArray[prop])))
-          }
-        }
-        /*  if (arregloValues === undefined || arregloValues.length == 0) {
-            if (check === (dias.length - 1)) {
-              for (var x = fecha.getDay(); x >= 0; x--) {
-                arregloValues.push(dias[x])
-                console.log(dias[x]);
-              }
-
-            } else {
-              for (var x = fecha.getDay(); x >= 0; x--) {
-                arregloValues.push(dias[x])
-                console.log(dias[x]);
-              }
-              for (var i = dias.length - 1; i > fecha.getDay(); i--) {
-                arregloValues.push(dias[i])
-                console.log(dias[i]);
-              }
+      }
+      /*  if (arregloValues === undefined || arregloValues.length == 0) {
+          if (check === (dias.length - 1)) {
+            for (var x = fecha.getDay(); x >= 0; x--) {
+              arregloValues.push(dias[x])
+              console.log(dias[x]);
             }
-          }*/
 
-        for (let prop in miArreglo) {
-          for (let prop2 in miArreglo[prop]) {
-            arregloNombresValues.push(miArreglo[prop][prop2])
-          }
-        }
-
-
-        let unique = [...new Set(arregloNombresValues)];
-
-
-        for (let index = 0; index < arregloValues.length; index++) {
-          arreglosValues.push(arregloValues[index]);
-        }
-
-        for (let prop in arreglosValues) {
-          for (let prop2 in arreglosValues[prop]) {
-            general.push(arreglosValues[prop][prop2])
-
-          }
-        }
-
-        for (let index = 0; index < general.length; index += 7) {
-          obj[mio] = {
-            label: unique[mio],
-            data: general.slice(index, (index + 7)),
-            backgroundColor: [arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio]],
-            borderColor: [arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio]],
-            borderWidth: 3,
-            type: 'b  ar'
-
-          }
-          mio++
-
-        }
-
-        finalDataArray.push(obj)
-        console.log('finalDataArray')
-        console.log(finalDataArray)
-        var dataArray = []
-        for (let prop in finalDataArray) {
-          for (let prop2 in finalDataArray[prop]) {
-            dataArray.push(finalDataArray[prop][prop2])
-
-          }
-        }
-
-        var miObjeto = {}
-        var objetoVacio = {}
-
-        objetoVacio = {
-          label: 'Sin registros',
-          data: 0
-        }
-
-        function renderChart(infoData) {
-
-          var lastElemnt = Object.keys(arregloValues[0]).reverse()[Object.keys(arregloValues[0]).reverse().length - 1] + ' - Actual'
-          var arrayNewDays = []
-          arrayNewDays = Object.keys(arregloValues[0]).reverse()
-          arrayNewDays.pop()
-          arrayNewDays.push(lastElemnt)
-
-          var data = {
-            labels: arrayNewDays,
-            datasets: []
-          };
-
-          var contador = 0
-          infoData.forEach(function (o) {
-            miObjeto[contador] = {
-              label: [o.label],
-              data: [o.data[6], o.data[5], o.data[4], o.data[3], o.data[2], o.data[1], o.data[0]],
-              backgroundColor: [arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador]],
-
+          } else {
+            for (var x = fecha.getDay(); x >= 0; x--) {
+              arregloValues.push(dias[x])
+              console.log(dias[x]);
             }
-            data.datasets.push(miObjeto[contador])
-            contador++
-          })
-          var ctxWeek = document.getElementById("myChartWeek");
-          var titulo = document.getElementById("titulo");
-          /* Gráfica de Horas Disponibles a registrar / Horas registradas */
-          var myChartWeek = new Chart(ctxWeek, {
-            type: 'bar',
-            data: data,
-            options: {
-              maintainAspectRatio: false,
-              scales: {
-                yAxes: [{
-                  stacked: true,
-                  ticks: {
-                    beginAtZero: true
-                  }
-                }],
-                xAxes: [{
-                  stacked: true,
-                  ticks: {
-                    beginAtZero: true
-                  }
-                }]
-              }
+            for (var i = dias.length - 1; i > fecha.getDay(); i--) {
+              arregloValues.push(dias[i])
+              console.log(dias[i]);
             }
-          });
-          myChartWeek.update();
+          }
+        }*/
+
+      for (let prop in miArreglo) {
+        for (let prop2 in miArreglo[prop]) {
+          arregloNombresValues.push(miArreglo[prop][prop2])
         }
-        $(document).ready(function () {
-          $("button").hover(function () {
+      }
 
-            $(this).css("background", "#F5F5F5");
-            $(this).css("border-radius", "90%");
-          }, function () {
-            $(this).css("background", "#FFFFFF");
-            $(this).css("border-radius", "0%");
-          });
 
-          setTimeout(function () {
-            titulo.style.visibility = "visible";
-            console.log('dataArray')
-            console.log(dataArray)
-            renderChart(dataArray);
-          }, 2000);
+      let unique = [...new Set(arregloNombresValues)];
+
+
+      for (let index = 0; index < arregloValues.length; index++) {
+        arreglosValues.push(arregloValues[index]);
+      }
+
+      for (let prop in arreglosValues) {
+        for (let prop2 in arreglosValues[prop]) {
+          general.push(arreglosValues[prop][prop2])
+
+        }
+      }
+
+      for (let index = 0; index < general.length; index += 7) {
+        obj[mio] = {
+          label: unique[mio],
+          data: general.slice(index, (index + 7)),
+          backgroundColor: [arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio]],
+          borderColor: [arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio], arrayColores[mio]],
+          borderWidth: 3,
+          type: 'b  ar'
+
+        }
+        mio++
+
+      }
+
+      finalDataArray.push(obj)
+      console.log('finalDataArray')
+      console.log(finalDataArray)
+      var dataArray = []
+      for (let prop in finalDataArray) {
+        for (let prop2 in finalDataArray[prop]) {
+          dataArray.push(finalDataArray[prop][prop2])
+
+        }
+      }
+
+      var miObjeto = {}
+      var objetoVacio = {}
+
+      objetoVacio = {
+        label: 'Sin registros',
+        data: 0
+      }
+
+      function renderChart(infoData) {
+
+        var lastElemnt = Object.keys(arregloValues[0]).reverse()[Object.keys(arregloValues[0]).reverse().length - 1] + ' - Actual'
+        var arrayNewDays = []
+        arrayNewDays = Object.keys(arregloValues[0]).reverse()
+        arrayNewDays.pop()
+        arrayNewDays.push(lastElemnt)
+
+        var data = {
+          labels: arrayNewDays,
+          datasets: []
+        };
+
+        var contador = 0
+        infoData.forEach(function (o) {
+          miObjeto[contador] = {
+            label: [o.label],
+            data: [o.data[6], o.data[5], o.data[4], o.data[3], o.data[2], o.data[1], o.data[0]],
+            backgroundColor: [arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador], arrayColores[contador]],
+
+          }
+          data.datasets.push(miObjeto[contador])
+          contador++
+        })
+        var ctxWeek = document.getElementById("myChartWeek");
+        var titulo = document.getElementById("titulo");
+        /* Gráfica de Horas Disponibles a registrar / Horas registradas */
+        var myChartWeek = new Chart(ctxWeek, {
+          type: 'bar',
+          data: data,
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [{
+                stacked: true,
+                ticks: {
+                  beginAtZero: true
+                }
+              }],
+              xAxes: [{
+                stacked: true,
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+        myChartWeek.update();
+      }
+      $(document).ready(function () {
+        $("button").hover(function () {
+
+          $(this).css("background", "#F5F5F5");
+          $(this).css("border-radius", "90%");
+        }, function () {
+          $(this).css("background", "#FFFFFF");
+          $(this).css("border-radius", "0%");
         });
 
-      })
+        setTimeout(function () {
+          titulo.style.visibility = "visible";
+          console.log('dataArray')
+          console.log(dataArray)
+          renderChart(dataArray);
+        }, 2000);
+      });
+
+    })
       .catch(function (e) {
         console.log(e);
         //alert("Error al cargar tus registros");
