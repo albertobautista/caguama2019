@@ -393,6 +393,7 @@
               console.log('3333333333333333333333333333333333333333333333333333333333')
               angular.element('#progressbarleft')[0].className = danger;
             } else if (porcentLeft > 100) {
+              console.log('444444444444444444444444444444444444444444444')
               porcentLeft = 30;
               porcentRight = 70;
               angular.element('#progressbarleft')[0].className = striped;
