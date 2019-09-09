@@ -370,9 +370,10 @@
             let porcentLeft = vm.ActualHours / vm.BudgetedHours * 100;
             let porcentRight = 100 - porcentLeft;
             if (vm.BudgetedHours <= vm.ActualHours) {
+              console.log('ssssssssssssssssssssss--------------------')
               vm.BudgetedHours = vm.BudgetedHours - vm.ActualHours;
             }
-            console.log('kakakakakakakakakakakakakakakaakak--------------------')
+           
             console.log(porcentLeft)
             console.log(porcentRight)
             console.log(data)
