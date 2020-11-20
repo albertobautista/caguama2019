@@ -63,7 +63,7 @@
       domain: "time2go.auth0.com",
       responseType: "token id_token",
       audience: "https://time2go.auth0.com/userinfo",
-      redirectUri: "https://t2goproductopruebas.herokuapp.com/callback",
+      redirectUri: "https://t2go.herokuapp.com/callback",
       scope: "openid",
       theme: {
         authButtons: {
